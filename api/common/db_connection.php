@@ -1,15 +1,20 @@
 <?php
-    $host = "localhost";
-    $dbname = "pos_system";
-    $username = "root";
-    $password = "";
+date_default_timezone_set('Asia/Manila');
 
-    try{
-        $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-    catch (PDOException $e){
-         die("Database connection failed: " . $e->getMessage());
-    }
+$servername = '172.25.114.171\SQLEXPRESS';
+$username = 'sa';
+$password = 'SystemGroup2018';
+$database = 'sample_system';
 
+try {
+    $conn = new PDO("sqlsrv:Server=$servername;Database=$database", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} 
+catch (PDOException $e) {
+    echo json_encode([
+        "status" => "error",
+        "message" => "Database connection failed: " . $e->getMessage()
+    ]);
+    exit;
+}
 ?>

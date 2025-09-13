@@ -1,6 +1,4 @@
 <?php
-// imports.php — does NOT echo on include; caller must call import_assets($system)
-// Do NOT override $system here; assume consts.php provides it.
 
 if (!function_exists('import_assets')) {
     function import_assets($system) {
@@ -8,7 +6,7 @@ if (!function_exists('import_assets')) {
         echo <<<HTML
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="{$system}/static/img/device_issuance.png" type="image/x-icon">
+<link rel="icon" href="{$system}/static/img/cashier.png" type="image/x-icon">
 <link rel="stylesheet" href="{$system}/static/css/font.min.css">
 <link rel="stylesheet" href="{$system}/static/css/global.css">
 <link rel="stylesheet" href="{$system}/plugins/fontawesome-free/css/all.min.css">
@@ -19,6 +17,8 @@ if (!function_exists('import_assets')) {
 <link rel="stylesheet" href="{$system}/plugins/ui-editor/toastui-editor.min.css">
 <link rel="stylesheet" href="{$system}/plugins/toaster/toastr.scss">
 <link rel="stylesheet" href="{$system}/plugins/apexcharts.js-5.3.0/dist/apexcharts.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 <script src="{$system}/plugins/jquery-min/jquery-3.7.1.min.js"></script>
 <script src="{$system}/plugins/sweetalert2/dist/sweetalert2.min.js"></script>
