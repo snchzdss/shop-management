@@ -1,0 +1,86 @@
+Cashier page content
+
+Typical sections:
+1. Dashboard / Home
+-Quick overview: sales today, pending orders, notifications
+2. New Sale / POS
+-Main area to scan or add products, manage cart, checkout
+3. Products
+-Quick access to product list or search (for adding items to cart)
+4. Transactions / Sales History
+-View past sales, receipts, and transaction details
+5. Customers
+-Lookup or add customers (if applicable)
+6. Reports
+-Basic sales reports, daily summaries
+7. Profile / Settings
+-Profile management or preferences
+8. Logout
+-Logout button
+
+
+Admin Page – Sections & Features:
+1. Dashboard / Overview
+Summary of:
+- Total sales (daily, weekly, monthly)
+- Top-selling products
+- Low stock alerts
+- New customers
+- Active staff
+- Graphs & charts (e.g., bar, line, pie)
+Quick stats: total products, revenue, profit, etc.
+
+2. User Management
+Manage cashiers and other admins:
+- Add / edit / delete users
+- Assign roles and permissions (admin, cashier, manager)
+- Activity logs (who logged in, actions taken)
+
+3. Product Management
+- Full CRUD (Create, Read, Update, Delete) interface
+- Bulk upload/import (CSV, Excel)
+- Barcode generator
+- Categories, suppliers, and variants (e.g., size, color)
+
+4. Inventory Management
+- Stock levels, reorder points
+- Stock adjustments (damage, returns, audits)
+- Transfer stock between locations (if multi-store)
+- Purchase orders (linked to suppliers)
+
+5. Sales & Transactions
+- View all sales (filter by date, cashier, payment method)
+- Refunds / returns processing
+- Export reports (PDF, Excel)
+
+6. Customer Management
+- Customer database
+- Loyalty programs (points, tiers)
+- Customer purchase history
+
+7. Reports & Analytics
+- Sales reports (daily, weekly, monthly)
+- Profit & loss
+- Inventory valuation
+- Tax reports
+- Cashier performance
+- Exportable formats (PDF, Excel)
+
+8. Settings / Configuration
+- Business details (name, logo, address)
+- Tax rates (VAT, GST, etc.)
+- Currency settings
+- Payment methods (cash, card, digital wallets)
+- Receipt format/template customization
+- Email/SMS notification settings (if any)
+
+9. System Logs / Audit Trail
+- Track activities:
+- Logins
+- Stock changes
+- Deleted records
+- Useful for accountability and troubleshooting
+
+10. Logout
+
+
