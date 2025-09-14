@@ -1,4 +1,4 @@
 <?php
-    session_name('shop_management');
+    session_name('shop-management');
     session_start();
 ?>

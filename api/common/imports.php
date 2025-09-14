@@ -6,7 +6,7 @@ if (!function_exists('import_assets')) {
         echo <<<HTML
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="{$system}/static/img/cashier.png" type="image/x-icon">
+<link rel="icon" href="{$system}/static/img/penguin.png" type="image/x-icon">
 <link rel="stylesheet" href="{$system}/static/css/font.min.css">
 <link rel="stylesheet" href="{$system}/static/css/global.css">
 <link rel="stylesheet" href="{$system}/plugins/fontawesome-free/css/all.min.css">

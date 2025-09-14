@@ -1,9 +1,9 @@
 <?php
 header('Content-Type: application/json');
 
-include '../common/sessions.php';
-include '../common/consts.php';
-include '../common/php_functions.php';
+include '../../api/common/sessions.php';
+include '../../api/common/consts.php';
+include '../../api/common/php_functions.php';
 
 $username_input = trim($_POST['username'] ?? '');
 $password_input = trim($_POST['password'] ?? '');
@@ -55,7 +55,9 @@ try {
         $conn = null;
         exit;
     }
-} catch (PDOException $e) {
+}
+
+catch (PDOException $e) {
     echo json_encode([
         "status" => "error",
         "message" => "Database error: " . $e->getMessage()

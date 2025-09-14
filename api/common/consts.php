@@ -1,4 +1,4 @@
 <?php
-    $system = "/shop_management";
+    $system = "/shop-management";
     $self_address = 'http://' . $_SERVER['HTTP_HOST'] . $system;
 ?>

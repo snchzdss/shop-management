@@ -1,13 +1,13 @@
 <?php
 date_default_timezone_set('Asia/Manila');
 
-$servername = '172.25.114.171\SQLEXPRESS';
-$username = 'sa';
-$password = 'SystemGroup2018';
-$database = 'sample_system';
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'pos_system';
 
 try {
-    $conn = new PDO("sqlsrv:Server=$servername;Database=$database", $username, $password);
+    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } 
 catch (PDOException $e) {

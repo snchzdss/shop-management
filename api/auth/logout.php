@@ -1,5 +1,5 @@
 <?php
-include '../common/sessions.php';
+include '../../api/common/sessions.php';
 
 session_unset();
 session_destroy();
