@@ -1,4 +1,4 @@
-<footer class="main-footer bg-dark text-white text-center py-2 mt-auto" style="font-size: 13px;">
+<footer class="main-footer fixed-bottom bg-dark text-white text-center py-2 mt-auto" style="font-size: 13px;">
     <div class="container">
         <div class="row">
             <div class="col-md-6 text-md-left">

@@ -4,10 +4,10 @@ include '../../api/common/consts.php';
 
 if (!empty($_SESSION['user'])) {
     if ($_SESSION['user']['role'] === 'admin') {
-        header("Location: {$system}/pages/admin/index.php");
+        header("Location: {$system}/pages/admin/admin_dashboard.php");
         exit();
     } elseif ($_SESSION['user']['role'] === 'cashier') {
-        header("Location: {$system}/pages/cashier/index.php");
+        header("Location: {$system}/pages/cashier/cashier_dashboard.php");
         exit();
     }
 }
@@ -203,20 +203,20 @@ $("#loginForm").on("submit", function(e) {
         dataType: "json",
         success: function(res) {
             if (res.status === "success") {
-                Swal.fire({
-                    icon: "success",
-                    title: "Login Successful",
-                    showConfirmButton: false,
-                    timer: 1500
-                }).then(() => {
+            //     Swal.fire({
+            //         icon: "success",
+            //         title: "Login Successful",
+            //         showConfirmButton: false,
+            //         timer: 1500
+            //     }).then(() => {
                     if (res.role === "admin") {
-                        window.location.href = "<?php echo $system;?>/pages/admin/index.php";
+                        window.location.href = "<?php echo $system;?>/pages/admin/admin_dashboard.php";
                     } else if (res.role === "cashier") {
-                        window.location.href = "<?php echo $system;?>/pages/cashier/index.php";
+                        window.location.href = "<?php echo $system;?>/pages/cashier/cashier_dashboard.php";
                     } else {
                         window.location.href = "<?php echo $system;?>/pages/auth/login.php";
                     }
-                });
+                // });
             } else {
                 Swal.fire({
                     icon: "error",
