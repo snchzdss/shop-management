@@ -165,46 +165,18 @@ Would you like me to break this plan into a **Gantt chart or task list for Trell
 
 ======================================
 
-Phase 2: Product & Inventory Core
-You’ve completed the foundation (auth, schema, UI layout), so now you're ready to enable selling by setting up the actual products and inventory.
-
-🟡 Next Major Task: Product Management (Admin)
-
-This enables Admins to add and manage the items that Cashiers will sell.
-
-🔹 Must-haves:
-
-Product CRUD
-
-Add/Edit/Delete/View products
-
-Product Fields:
-
-Name, price, barcode (or SKU), description
-
-Product image upload (optional at first)
-
-Category (from dropdown)
-
-Supplier (if you're using suppliers)
-
-Product List View
-
-Pagination, sorting, search, filter by category/supplier
-
-🔸 Nice-to-haves (can add after MVP):
-
-Product variants (sizes, colors, etc.)
-
-Bulk import (CSV/Excel)
 
 
-If you want, I can help next with:
 
-Update product API
 
-Delete product API
+Build the Admin UI for Categories
 
-Listing products with pagination and search
+Ito yung front-end interface ng admin panel para:
 
-Frontend form + AJAX integration
+📋 List all categories (table)
+
+➕ Add new category (modal form)
+
+✏️ Edit category (modal form)
+
+❌ Delete category (confirmation modal)

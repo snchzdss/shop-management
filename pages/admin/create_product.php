@@ -62,7 +62,7 @@ include '../../api/common/login_check.php';
 
             <!-- Main content -->
             <section class="content">
-                
+    <!--put the content inside this section-->
             </section>
 
         </div>

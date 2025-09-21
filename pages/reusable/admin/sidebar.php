@@ -23,6 +23,13 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="<?php echo $system;?>/pages/admin/categories.php" class="nav-link">
+                        <i class="nav-icon fas fa-boxes"></i>
+                        <p>Categories</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="<?php echo $system;?>/pages/admin/create_product.php" class="nav-link">
                         <i class="nav-icon fas fa-boxes"></i>
                         <p>Product</p>
