@@ -1,0 +1,33 @@
+fetchColumn() -> returns the value of the first row that matches the condition
+rowCount()  -> tells you how many rows were actually changed
+LEFT JOIN 
+
+
+
+
+ $person = [
+      "name" => "Alice",
+      "age" => 25,
+      "city" => "New York"
+    ];
+
+    echo $person['city'];
+
+
+    $stmt = $conn->prepare("SELECT * FROM products WHERE id = :id");
+    $stmt->execute([':id' => $id]);
+    $current_product =  $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+if ($barcode !== null && $barcode !== $current_product['barcode']) {
+        $barcode_check = $conn->prepare("SELECT COUNT(*) FROM products WHERE barcode = :barcode AND id != :id"); //check if the new barcode exists in other rows
+        $barcode_check->execute([':barcode' => $barcode, ':id' => $id]);
+
+        //returns the value of the first row that matches the condition
+        if ($barcode_check->fetchColumn() > 0) {
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Barcode already exists.'
+            ]);
+            exit();
+        }
+    }
