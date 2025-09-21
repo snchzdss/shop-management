@@ -1,6 +1,6 @@
 <?php
+include '../../api/common/sessions.php'; //included
 include '../../api/common/consts.php';
-include '../../api/common/sessions.php';
 include '../../api/common/login_check.php';
 ?>
 
@@ -10,7 +10,7 @@ include '../../api/common/login_check.php';
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cashier | Shop Management</title>
+    <title>User | Template</title>
     <?php
     include '../../api/common/imports.php';
     import_assets($system);

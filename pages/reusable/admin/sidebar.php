@@ -9,7 +9,7 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
+                    <a href="<?php echo $system;?>/pages/admin/admin_dashboard.php" class="nav-link active">
                         <i class="nav-icon fas fa-chart-line"></i>
                         <p>Dashboard</p>
                     </a>
@@ -23,7 +23,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?php echo $system;?>/pages/admin/create_product.php" class="nav-link">
                         <i class="nav-icon fas fa-boxes"></i>
                         <p>Product</p>
                     </a>
