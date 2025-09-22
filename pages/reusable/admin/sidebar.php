@@ -24,7 +24,7 @@
 
                 <li class="nav-item">
                     <a href="<?php echo $system;?>/pages/admin/categories.php" class="nav-link">
-                        <i class="nav-icon fas fa-boxes"></i>
+                        <i class="nav-icon fas fa-tags"></i>
                         <p>Categories</p>
                     </a>
                 </li>

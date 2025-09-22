@@ -21,18 +21,10 @@
     /* Table adjustments */
     #categoriesTable th, #categoriesTable td {
         vertical-align: middle;
+        text-align: center;
     }
     #categoriesTable th, #categoriesTable td.actions-column {
         white-space: nowrap; /* prevent wrapping */
-    }
-    #categoriesTable th.id-column, #categoriesTable td.id-column {
-        width: 50px; /* small width for ID */
-    }
-    #categoriesTable td.actions-column {
-        width: 1%; /* shrink to fit buttons */
-    }
-    #categoriesTable td.actions-column .btn {
-        margin-right: 5px; /* space between buttons */
     }
   </style>
 </head>
@@ -58,16 +50,16 @@
           <div class="card">
             <div class="card-body">
               <div class="table-responsive">
-                <table id="categoriesTable" class="table table-striped table-bordered" style="width:100%">
+                <table id="categoriesTable" class="table table-bordered table-hover" style="width:100%">
                   <thead>
                     <tr>
-                      <th class="text-center id-column">ID</th>
-                      <th>Name</th>
-                      <th class="text-center actions-column">Actions</th>
+                      <th class="id-column">ID</th>
+                      <th class="name-column">Name</th>
+                      <th class="actions-column">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <!-- populated by JS -->
+                    <!-- display the data on the tables -->
                   </tbody>
                 </table>
               </div>
@@ -81,53 +73,10 @@
   </div>
 
   <!-- Add Category Modal -->
-  <div class="modal fade" id="addCategoryModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <form id="addCategoryForm">
-          <div class="modal-header">
-            <h5 class="modal-title">Add Category</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
-          </div>
-          <div class="modal-body">
-            <div class="form-group">
-              <label for="add_category_name">Name</label>
-              <input type="text" id="add_category_name" name="name" class="form-control" required autofocus>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-success">Add</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+  <?php include '../../modals/admin/add_category.php'; ?>
 
   <!-- Edit Category Modal -->
-  <div class="modal fade" id="editCategoryModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <form id="editCategoryForm">
-          <div class="modal-header">
-            <h5 class="modal-title">Edit Category</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
-          </div>
-          <div class="modal-body">
-            <input type="hidden" name="id" id="edit_category_id">
-            <div class="form-group">
-              <label for="edit_category_name">Name</label>
-              <input type="text" id="edit_category_name" name="name" class="form-control" required>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary">Save changes</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+  <?php include '../../modals/admin/edit_category.php'; ?>
 
 <script>
 $(document).ready(function() {
@@ -153,9 +102,9 @@ $(document).ready(function() {
 
       const tbodyHtml = rows.map((r, index) => `
         <tr>
-          <td class="text-center id-column">${index + 1}</td>
-          <td>${escapeHtml(r.name)}</td>
-          <td class="text-center actions-column">
+          <td class="id-column">${index + 1}</td>
+          <td class="name-column">${escapeHtml(r.name)}</td>
+          <td class="actions-column">
             <button class="btn btn-sm btn-primary btn-edit me-2" data-id="${r.id}" data-name="${escapeHtml(r.name)}">
               <i class="fa fa-edit"></i>
             </button>
@@ -176,7 +125,12 @@ $(document).ready(function() {
         responsive: true,
         pageLength: 10,
         ordering: true,
-        columnDefs: [{ orderable: false, targets: 2 }]
+        columnDefs: [
+          { orderable: false, targets: 2 }, // disable ordering on actions
+          { width: "15%", targets: 0 },    // ID small
+          { width: "65%", targets: 1 },    // Name big
+          { width: "20%", targets: 2 }     // Actions medium
+        ]
       });
     }).fail(function() {
       Swal.fire('Error', 'Failed to fetch categories', 'error');

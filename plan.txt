@@ -165,18 +165,10 @@ Would you like me to break this plan into a **Gantt chart or task list for Trell
 
 ======================================
 
-
-
-
-
-Build the Admin UI for Categories
-
-Ito yung front-end interface ng admin panel para:
-
-📋 List all categories (table)
-
-➕ Add new category (modal form)
-
-✏️ Edit category (modal form)
-
-❌ Delete category (confirmation modal)
+wrapper
+ └── content-wrapper
+       ├── content-header  (title & breadcrumbs)
+       └── content
+             ├── card 1 (User stats)
+             ├── card 2 (Sales chart)
+             └── card 3 (Latest orders)

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,9 +33,41 @@
       overflow: hidden;
     }
 
-    .navbar{
-        background-color: #0a3d62;
+    .navbar {
+      background-color: #0a3d62;
     }
+
+    .main-header {
+      background-color: #0a3d62 !important;
+      /* your blue color */
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1030;
+      /* above content */
+      transition: margin-left 0.3s ease;
+    }
+
+    /* Match AdminLTE sidebar width when expanded */
+    .sidebar-open .main-header,
+    .layout-fixed.sidebar-mini .main-header {
+      margin-left: 250px;
+      /* Expanded sidebar */
+    }
+
+    /* Match AdminLTE sidebar width when collapsed */
+    .sidebar-collapse .main-header {
+      margin-left: 80px;
+      /* Collapsed sidebar */
+    }
+
+    body {
+      margin: 0;
+      padding-top: 60px;
+      /* Push content down so it doesn't hide under navbar */
+    }
+
 
     .btn-file input[type=file] {
       position: absolute;
@@ -76,9 +107,10 @@
   </style>
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
   <div class="wrapper">
 
+    <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
       <img class="animation__shake" src="../../static/img/penguinicon.png" alt="logo" height="60" width="60">
       <noscript>
@@ -89,21 +121,22 @@
       </noscript>
     </div>
 
-    <nav class="main-header navbar navbar-expand navbar-blue navbar-light navbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" data-widget="pushmenu" href="#" role="button" style="color:white;"><i
-              class="fas fa-bars"></i></a>
-        </li>
-      </ul>
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-blue navbar-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button" style="color:white;">
+          <i class="fas fa-bars"></i>
+        </a>
+      </li>
+    </ul>
 
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" data-widget="fullscreen" href="#" role="button" style="color:white;">
-            <i class="fas fa-expand-arrows-alt"></i>
-          </a>
-        </li>
-
-
-      </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button" style="color:white;">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+    </ul>
     </nav>
+    <!-- /.navbar -->
